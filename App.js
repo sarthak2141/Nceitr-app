@@ -1,20 +1,55 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import StudentRegistrationScreen from './screens/StudentRegistrationScreen';
+import StudentLoginScreen from './screens/StudentLoginScreen';
+import CenterRegistrationScreen from './screens/CenterRegistrationScreen';
+import CenterLoginScreen from './screens/CenterLoginScreen';
+const Stack=createNativeStackNavigator();
+const Drower=createDrawerNavigator();
+ const App=()=> {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <NavigationContainer>
+    <Stack.Navigator>
+      
+      <Stack.Screen name='HomeScreen' component={HomeScreen} 
+      options={{
+        headerShown:false,
+       
+      }}/>
+      <Stack.Screen name='STUDENT REGISTRATION' component={StudentRegistrationScreen} 
+      options={{
+        headerShown:false,
+       
+      }}
+      />
+      <Stack.Screen name='STUDENT LOGIN' component={StudentLoginScreen} 
+      options={{
+        headerShown:false,
+       
+      }}
+      />
+      <Stack.Screen name='CENTER REGISTRATION' component={CenterRegistrationScreen} 
+      options={{
+        headerShown:false,
+       
+      }}
+      />
+      <Stack.Screen name='CENTER LOGIN' component={CenterLoginScreen}
+       options={{
+        headerShown:false,
+       
+      }}
+      />
+    </Stack.Navigator>
+    
+   </NavigationContainer> 
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
+export default App;
