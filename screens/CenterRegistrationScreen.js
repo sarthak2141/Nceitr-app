@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert,ScrollView, Dimensions,TouchableOpacity,Image ,StatusBar} from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert,ScrollView, Dimensions,TouchableOpacity,Image ,StatusBar, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 const screenWidth=Dimensions.get('window')
 const CenterRegistrationScreen = ({navigation}) => {
@@ -20,10 +20,11 @@ const CenterRegistrationScreen = ({navigation}) => {
 
 <ScrollView   showsVerticalScrollIndicator={false}
      style={{flex:1,width:screenWidth, backgroundColor:"#ffffff",marginTop:22}}>
+      <SafeAreaView>
        <StatusBar backgroundColor='grey' barStyle="dark-content"/>
-        <View style={{backgroundColor:'#002343',flexDirection:"row" ,}} >
+        <View style={{marginTop:22,marginLeft:12}} >
         <TouchableOpacity style={{width:45, }} onPress={()=>navigation.goBack()}>
-        <Icon name='arrow-back' size={30} style={{color:'white', padding:4, fontWeight:"600"}}/>
+        <Icon name='arrow-back' size={32} style={{color:'black', padding:4, fontWeight:"600"}}/>
         </TouchableOpacity>
         
           
@@ -83,7 +84,10 @@ const CenterRegistrationScreen = ({navigation}) => {
         </View>
 
     </View>
+    
+</SafeAreaView>
     </ScrollView>
+    
   );
 };
 

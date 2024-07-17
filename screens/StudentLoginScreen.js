@@ -9,14 +9,11 @@ const StudentLoginScreen = ({navigation}) => {
 
 <ScrollView   showsVerticalScrollIndicator={false}
      style={{flex:1,width:screenWidth, backgroundColor:"#ffffff",marginTop:22}}>
-       <StatusBar backgroundColor='grey' barStyle="dark-content"/>
-        <View style={{backgroundColor:'#002343',flexDirection:"row" , }} >
+       <View style={{marginTop:22 ,marginLeft:12}} >
         <TouchableOpacity style={{width:45, }} onPress={()=>navigation.goBack()}>
-        <Icon name='arrow-back' size={30} style={{color:'white', padding:4, fontWeight:"600"}}/>
+        <Icon name='arrow-back' size={32} style={{color:'black', padding:4, fontWeight:"600"}}/>
         </TouchableOpacity>
-        <View style={{flex:1,alignItems:"center", }}>
         
-        </View>
           
         </View>
         
